@@ -1,0 +1,29 @@
+# Build the formula from source on macOS and Linux, run its test and audit it, on every push and pull request.
+
+name: install
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      # Taps this repository as jondalar/ue2emu.
+      - uses: Homebrew/actions/setup-homebrew@main
+
+      - name: Install from source
+        run: brew install --build-from-source --verbose jondalar/ue2emu/ue2emu
+
+      - name: Formula test
+        run: brew test jondalar/ue2emu/ue2emu
+
+      - name: Audit
+        run: brew audit --strict jondalar/ue2emu/ue2emu
