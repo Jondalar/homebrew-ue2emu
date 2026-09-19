@@ -3,8 +3,8 @@
 class Ue2emu < Formula
   desc "Emulator for Ultimate 64 Elite II and C64 Ultimate firmware"
   homepage "https://github.com/Jondalar/UE2-C64U-Emulator"
-  url "https://github.com/Jondalar/UE2-C64U-Emulator/archive/refs/tags/v0.3.4.tar.gz"
-  sha256 "9641c28b2e4fccb88a721e2787b817ad458f59e80286e13c9e0721aa47825a80"
+  url "https://github.com/Jondalar/UE2-C64U-Emulator/archive/refs/tags/v0.3.5.tar.gz"
+  sha256 "4cd2d9f198a5f8ea10873278a3c87892e9d1d8386b26684cfc7a4f7556d37cb9"
   license "GPL-3.0-or-later"
   head "https://github.com/Jondalar/UE2-C64U-Emulator.git", branch: "main"
 
